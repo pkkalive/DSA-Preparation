@@ -3,19 +3,16 @@ const beggars = 5
 
 function continuousSumQuery (beggars, queries){
     const res = new Array(beggars).fill(0)
-    const ans = []
     for (let [start, end, value] of queries){
         res[start - 1] += value
         if (end < beggars){
             res[end] -= value
         }
     }
-    ans [0] = res[0]
     for (let i = 1; i < beggars; i++){
-        ans[i] = ans [i - 1] + res[i]
+        res[i] += res [i - 1]
     }
-    return ans;
-
+    return res;
 }
 
 console.log(continuousSumQuery(beggars,queries))
