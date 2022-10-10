@@ -1,4 +1,5 @@
 const arr = [ 0, 6, 0, 6, 4, 8, 8, 1 ]
+
 function addOneToNumber(array){
     let i = 0, zeros = 0;
     let len = array.length - 1;
@@ -9,7 +10,6 @@ function addOneToNumber(array){
         } else {
             break
         }
-
     }
     array = array.slice(zeros)
     len = array.length - 1;
